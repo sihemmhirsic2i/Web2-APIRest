@@ -1,0 +1,22 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Ordinateur portable",
+      "price": 1200,
+      "description": "Ordinateur portable puissant avec un processeur rapide et un grand espace de stockage."
+    },
+    {
+      "id": "2",
+      "name": "Smartphone",
+      "price": 800,
+      "description": "Smartphone dernier cri avec un écran OLED et une batterie longue durée."
+    },
+    {
+      "id": "3",
+      "name": "Casque audio sans fil",
+      "price": 150,
+      "description": "Casque audio de haute qualité avec suppression active du bruit."
+    }
+  ]
+}
