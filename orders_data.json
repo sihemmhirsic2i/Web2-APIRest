@@ -6,19 +6,15 @@
       "products": [
         {
           "id": "1",
-          "name": "Ordinateur portable",
-          "quantity": 2,
-          "price": 1200
+          "quantity": 2
         },
         {
           "id": "3",
-          "name": "Casque audio sans fil",
-          "quantity": 1,
-          "price": 150
+          "quantity": 1
         }
       ],
-      "total_price": 2550,
-      "status": "En attente"
+      "status": "En attente",
+      "order_date": "2024-05-17"
     },
     {
       "id": "789012",
@@ -26,13 +22,11 @@
       "products": [
         {
           "id": "2",
-          "name": "Smartphone",
-          "quantity": 1,
-          "price": 800
+          "quantity": 1
         }
       ],
-      "total_price": 800,
-      "status": "Livré"
+      "status": "Livré",
+      "order_date": "2024-05-15"
     }
   ]
 }
