@@ -1,0 +1,32 @@
+{
+  "orders": [
+    {
+      "id": "123456",
+      "customer_id": "789",
+      "products": [
+        {
+          "id": "1",
+          "quantity": 2
+        },
+        {
+          "id": "3",
+          "quantity": 1
+        }
+      ],
+      "status": "En attente",
+      "order_date": "2024-05-17"
+    },
+    {
+      "id": "789012",
+      "customer_id": "456",
+      "products": [
+        {
+          "id": "2",
+          "quantity": 1
+        }
+      ],
+      "status": "Livré",
+      "order_date": "2024-05-15"
+    }
+  ]
+}
