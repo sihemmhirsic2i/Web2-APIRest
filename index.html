@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Récupération des détails des produits</title>
+</head>
+<body>
+  <h1>Détails des produits</h1>
+  <div id="productDetails"></div>
+
+  <script>
+    // Fonction pour récupérer et afficher les détails des produits en fonction de l'ID dans l'URL
+    function getProductDetailsFromUrl() {
+      // Récupérer l'ID du produit à partir de l'URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const productId = urlParams.get('id');
+
+      // Si aucun ID de produit n'est fourni dans l'URL, afficher un message d'erreur
+      if (!productId) {
+        document.getElementById('productDetails').innerHTML = `<p>Aucun ID de produit fourni dans l'URL</p>`;
+        return;
+      }
+
+      // Récupérer les détails du produit à partir du fichier JSON
+      fetch(`products_data.json`)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Erreur HTTP ' + response.status);
+          }
+          return response.json();
+        })
+        .then(data => {
+          // Trouver le produit correspondant à l'ID spécifié
+          const product = data.products.find(item => item.id === productId);
+          if (product) {
+            // Afficher les détails du produit
+            document.getElementById('productDetails').innerHTML = `
+              <h2>${product.name}</h2>
+              <p><strong>Prix:</strong> ${product.price} €</p>
+              <p><strong>Description:</strong> ${product.description}</p>
+            `;
+          } else {
+            // Si aucun produit correspondant n'est trouvé, afficher un message d'erreur
+            document.getElementById('productDetails').innerHTML = `<p>Produit non trouvé</p>`;
+          }
+        })
+        .catch(error => {
+          console.error('Erreur lors de la récupération des données:', error);
+        });
+    }
+
+    // Appel de la fonction pour récupérer et afficher les détails du produit à partir de l'URL
+    getProductDetailsFromUrl();
+  </script>
+</body>
+</html>
